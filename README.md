@@ -52,4 +52,6 @@ Work on feature and test to make sure all changes are working. commit changes to
 
 When ready to merge branch make sure to resolve any conflicts with code on staging branch before creating a pull request. Make sure you are merging into staging branch NOT main.
 
-## Naming Convention
+## BackEnd Git Repo
+
+If needed, backend repo for this code can be found here [NodeJS-2024-Starter-Template-With-Auth] (https://github.com/WilderDev/NodeJS-2024-Starter-Template-With-Auth)
