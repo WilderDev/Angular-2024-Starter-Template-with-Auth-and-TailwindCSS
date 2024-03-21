@@ -9,15 +9,15 @@ const routes: Routes = [
 		path: "",
 		pathMatch: "full",
 		component: AppComponent
+	},
+	{
+		path: "login",
+		component: LoginComponent
+	},
+	{
+		path: "register",
+		component: RegisterComponent
 	}
-  {
-    path: "login",
-    component: LoginComponent,
-  },
-  {
-    path: "register",
-    component: RegisterComponent,
-  }
 ];
 
 @NgModule({
