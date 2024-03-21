@@ -1,14 +1,12 @@
-import { NgModule } from '@angular/core';
-import { ServerModule } from '@angular/platform-server';
+import { NgModule } from "@angular/core";
+import { ServerModule } from "@angular/platform-server";
+import { ReactiveFormsModule } from "@angular/forms"; // Import ReactiveFormsModule
 
-import { AppModule } from './app.module';
-import { AppComponent } from './app.component';
+import { AppModule } from "./app.module";
+import { AppComponent } from "./app.component";
 
 @NgModule({
-  imports: [
-    AppModule,
-    ServerModule,
-  ],
-  bootstrap: [AppComponent],
+	imports: [AppModule, ServerModule, ReactiveFormsModule],
+	bootstrap: [AppComponent]
 })
 export class AppServerModule {}
