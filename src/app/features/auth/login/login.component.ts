@@ -1,5 +1,8 @@
 import { Component } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { AuthService, LoginUser } from "../../../shared/services/auth.service";
+import { Subscription } from "rxjs";
+import { Router } from "express";
 
 @Component({
 	selector: "app-login",
@@ -13,9 +16,34 @@ export class LoginComponent {
 		password: new FormControl("", [Validators.required])
 	});
 
+  private authSubscription = new Subscription();
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
 	// On Submit Function
 	onSubmit() {
-		// TODO: Logic once form is submitted
-		console.log(this.loginForm.value);
+    if (this.loginForm.invalid) return;
+    const formValue = this.loginForm.getRawValue() as LoginUser;
+
+    if (!formValue) return;
+
+    this.authSubscription.add(
+      this.authService.login(formValue).subscribe((response) => {
+        const {user} = response;
+
+
+        console.log(response)
+        this.authService.setUser(user);
+        // Navigate to Home Page after Successful Register
+        // this.router.navigate(['/'],)
+      })
+    );
 	}
+
+  ngOnDestroy() {
+    this.authSubscription.unsubscribe()
+  }
 }
