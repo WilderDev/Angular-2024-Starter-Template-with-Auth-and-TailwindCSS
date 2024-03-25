@@ -62,6 +62,8 @@ TBD
 
 1. To build your application for production, use the `ng build` command. By default, this command uses the production build configuration.This command creates a dist folder in the application root directory with all the files that a hosting service needs for serving your application.
 
-`If the above ng build command throws an error about missing packages, append the missing dependencies in your local project's package.json file to match the one in the downloaded StackBlitz project.`
+```If the above ng build command throws an error about missing packages, append the missing dependencies in your local project's package.json file to match the one in the downloaded StackBlitz project.
+
+```
 
 2. Copy the contents of the `dist/my-project-name` folder to your web server. Because these files are static, you can host them on any web server capable of serving files; such as `Node.js`, Java, .NET, or any backend such as [Firebase](https://firebase.google.com/docs/hosting), [Google Cloud](https://cloud.google.com/solutions/web-hosting), or [App Engine](https://cloud.google.com/appengine/docs/standard/hosting-a-static-website). For more information, see [Building & Serving](https://angular.io/guide/build) and [Deployment](https://angular.io/guide/deployment).
