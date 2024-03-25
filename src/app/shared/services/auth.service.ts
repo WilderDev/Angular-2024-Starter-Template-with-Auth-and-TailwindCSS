@@ -72,6 +72,12 @@ export class AuthService {
     )
   }
 
+  // verificationToken, email
+
+  verify(token, email) {
+    return this.httpClient.post(`${environment.API_URL}/api/v1/auth/verify`, {email: email, verificationToken: token})
+  }
+
   // Removes User from Session, Deletes Cookie, Routes to Landing Page
   logout() {
     this.cookieService.delete('token');
