@@ -62,7 +62,8 @@ TBD
 
 1. To build your application for production, use the `ng build` command. By default, this command uses the production build configuration.This command creates a dist folder in the application root directory with all the files that a hosting service needs for serving your application.
 
-```If the above ng build command throws an error about missing packages, append the missing dependencies in your local project's package.json file to match the one in the downloaded StackBlitz project.
+```
+If the above ng build command throws an error about missing packages, append the missing dependencies in your local project's package.json file to match the one in the downloaded StackBlitz project.
 
 ```
 
