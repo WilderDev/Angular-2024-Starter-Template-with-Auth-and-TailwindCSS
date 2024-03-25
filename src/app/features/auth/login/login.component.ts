@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AuthService, LoginUser } from "../../../shared/services/auth.service";
 import { Subscription } from "rxjs";
-import { Router } from "express";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: "app-login",

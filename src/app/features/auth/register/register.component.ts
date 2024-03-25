@@ -36,6 +36,7 @@ export class RegisterComponent {
       this.authService.register(formValue).subscribe((response) => {
         const {user} = response;
 
+        console.log(response)
 
         console.log(response)
         this.authService.setUser(user);
