@@ -28,29 +28,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Starting / Working on App
 
-### STEP 1:
+1. Clone git repo and create a branch to work from base off staging branch
 
-Clone git repo and create a branch to work from base off staging branch
+2. Pull any changes from staging to current branch you are working on
 
-### STEP 2:
+3. Start a new terminal and run `npm i` to install all dependencies and dev dependencies
 
-Pull any changes from staging to current branch you are working on
+4. Run `ng serve` to build and run app and navigate to localhost:4200 the app is running on
 
-### STEP 3:
+5. Work on feature and test to make sure all changes are working. commit changes to git and push all changes on branch
 
-Start a new terminal and run `npm i` to install all dependencies and dev dependencies
-
-### STEP 4:
-
-Run `ng serve` to build and run app and navigate to localhost:4200 the app is running on
-
-### STEP 5:
-
-Work on feature and test to make sure all changes are working. commit changes to git and push all changes on branch
-
-### STEP 6:
-
-When ready to merge branch make sure to resolve any conflicts with code on staging branch before creating a pull request. Make sure you are merging into staging branch NOT main.
+6. When ready to merge branch make sure to resolve any conflicts with code on staging branch before creating a pull request. Make sure you are merging into staging branch NOT main.
 
 ## BackEnd Git Repo
 
@@ -58,14 +46,21 @@ If needed, backend repo for this code can be found here [NodeJS-2024-Starter-Tem
 
 ## Features List
 
-- auth with login and register
-- landing page
-- navbar
-- crud
-- guards
-- interceptor
-- services
+-   auth with login and register
+-   landing page
+-   navbar
+-   crud
+-   guards
+-   interceptor
+-   services
 
 ## Naming Convention
 
 TBD
+
+## Hosting Guide
+
+1. To build your application for production, use the `ng build` command. By default, this command uses the production build configuration.This command creates a dist folder in the application root directory with all the files that a hosting service needs for serving your application.
+   If the above ng build command throws an error about missing packages, append the missing dependencies in your local project's package.json file to match the one in the downloaded StackBlitz project.
+
+2. Copy the contents of the `dist/my-project-name` folder to your web server. Because these files are static, you can host them on any web server capable of serving files; such as `Node.js`, Java, .NET, or any backend such as [Firebase](https://firebase.google.com/docs/hosting), [Google Cloud](https://cloud.google.com/solutions/web-hosting), or [App Engine](https://cloud.google.com/appengine/docs/standard/hosting-a-static-website). For more information, see [Building & Serving](https://angular.io/guide/build) and [Deployment](https://angular.io/guide/deployment).
