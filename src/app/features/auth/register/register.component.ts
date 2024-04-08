@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
-import { AuthService, CreateUser } from "../../../shared/services/auth.service";
+import { AuthService } from "../../../shared/services/auth.service";
 import { Subscription } from "rxjs";
 import { Router } from "@angular/router";
 import { response } from "express";
@@ -18,35 +18,32 @@ export class RegisterComponent {
 		password: new FormControl("", [Validators.required])
 	});
 
-  private authSubscription = new Subscription
+	private authSubscription = new Subscription();
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private router: Router
-  ) {}
+	constructor(
+		private formBuilder: FormBuilder,
+		private authService: AuthService,
+		private router: Router
+	) {}
 	// On Submit Function
 	onSubmit() {
-    if (this.registerForm.invalid) return;
-    const formValue = this.registerForm.getRawValue() as CreateUser;
+		if (this.registerForm.invalid) return;
+		const formValue = this.registerForm.getRawValue();
 
-    if (!formValue) return;
+		if (!formValue) return;
 
-    this.authSubscription.add(
-      this.authService.register(formValue).subscribe((response) => {
-        const {user} = response;
+		this.authSubscription.add(
+			this.authService.register(formValue).subscribe((response) => {
+				console.log(response);
 
-        console.log(response)
-
-        console.log(response)
-        this.authService.setUser(user);
-        // Navigate to Home Page after Successful Register
-        // this.router.navigate(['/'],)
-      })
-    )
+				console.log(response);
+				// Navigate to Home Page after Successful Register
+				// this.router.navigate(['/'],)
+			})
+		);
 	}
 
-  ngOnDestroy() {
-    this.authSubscription.unsubscribe();
-  }
+	ngOnDestroy() {
+		this.authSubscription.unsubscribe();
+	}
 }
