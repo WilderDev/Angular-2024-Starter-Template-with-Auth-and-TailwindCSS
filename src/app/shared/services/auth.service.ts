@@ -50,7 +50,7 @@ export class AuthService {
 
 	// verificationToken, email
 
-	verify(token, email) {
+	verify(token, email): Observable<any> {
 		return this.httpClient.post(`${environment.API_URL}/auth/verify`, {
 			email: email,
 			verificationToken: token
